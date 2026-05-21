@@ -39,10 +39,10 @@ export default function StoryTimelineSection() {
 
     <>
 
-      <section className="relative overflow-hidden bg-black px-6 py-40">
+      <section className="relative overflow-hidden px-6 py-40">
 
         {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#120018] to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#120018]/95 to-black/90" />
 
         {/* MEMORIES */}
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-52">

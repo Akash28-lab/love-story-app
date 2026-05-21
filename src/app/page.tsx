@@ -4,8 +4,8 @@ import { useEffect } from "react";
 
 import HeroSection from "@/sections/hero/HeroSection";
 
-import AmbientGlow from "@/components/animations/AmbientGlow";
 import FloatingHearts from "@/components/animations/FloatingHearts";
+import PageContent from "@/components/animations/PageContent";
 
 import MusicPlayer from "@/components/ui/MusicPlayer";
 
@@ -22,16 +22,15 @@ export default function Home() {
 
   return (
 
-    <main className="relative bg-black">
+    <main className="relative isolate bg-black">
 
-      <AmbientGlow />
       <FloatingHearts />
 
-      {/* MUSIC */}
-      <MusicPlayer />
+      <PageContent>
+        <HeroSection />
+      </PageContent>
 
-      {/* MAIN APP */}
-      <HeroSection />
+      <MusicPlayer />
 
     </main>
 

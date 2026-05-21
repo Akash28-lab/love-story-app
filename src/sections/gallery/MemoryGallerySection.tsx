@@ -24,14 +24,14 @@ export default function MemoryGallerySection({
       className="
       relative
       overflow-hidden
-      bg-black
+      bg-transparent
       px-6
       py-40
       "
     >
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#140014] to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#140014]/95 to-black/90" />
 
       {/* LIGHT GLOW */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-pink-500/10 blur-3xl" />
