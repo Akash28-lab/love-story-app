@@ -2,6 +2,9 @@
   "name": "love-story-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "sync:media": "node scripts/sync-story-media.mjs",
     "predev": "npm run sync:media",
