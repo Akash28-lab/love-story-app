@@ -35,7 +35,8 @@ export default function ReadySection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
 
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/15 to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(236,72,153,0.15),transparent_55%)]" />
 
       {!yesClicked ? (
 

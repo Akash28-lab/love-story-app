@@ -33,43 +33,72 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes float-heart {
-  0% {
-    transform: translate3d(var(--heart-drift, 0), 105vh, 0) scale(0.55);
-    opacity: 0;
-  }
-  8% {
-    opacity: 0.85;
-  }
-  92% {
-    opacity: 0.65;
-  }
+@keyframes ambient-drift-1 {
+  0%,
   100% {
-    transform: translate3d(calc(var(--heart-drift, 0) * -1), -12vh, 0) scale(1);
-    opacity: 0;
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.15);
+    opacity: 0.55;
   }
 }
 
-.floating-hearts-layer {
-  overflow: hidden;
-  isolation: isolate;
+@keyframes ambient-drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50px, 20px) scale(1.1);
+    opacity: 0.5;
+  }
 }
 
-.floating-heart {
+@keyframes ambient-drift-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(30px, 40px) scale(1.2);
+    opacity: 0.45;
+  }
+}
+
+.ambient-glow {
   position: absolute;
-  top: 0;
-  line-height: 1;
-  color: rgb(244 114 182 / 0.45);
-  animation-name: float-heart;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  will-change: transform, opacity;
-  user-select: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .floating-heart {
-    animation-duration: 28s !important;
-  }
+.ambient-glow-1 {
+  top: 10%;
+  left: 5%;
+  width: 280px;
+  height: 280px;
+  background: rgb(236 72 153 / 0.35);
+  animation: ambient-drift-1 8s ease-in-out infinite;
+}
+
+.ambient-glow-2 {
+  top: 55%;
+  right: 8%;
+  width: 320px;
+  height: 320px;
+  background: rgb(192 132 252 / 0.3);
+  animation: ambient-drift-2 10s ease-in-out infinite;
+}
+
+.ambient-glow-3 {
+  bottom: 5%;
+  left: 35%;
+  width: 260px;
+  height: 260px;
+  background: rgb(244 114 182 / 0.28);
+  animation: ambient-drift-3 12s ease-in-out infinite;
 }

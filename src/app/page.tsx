@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import HeroSection from "@/sections/hero/HeroSection";
 
+import AmbientGlow from "@/components/animations/AmbientGlow";
 import FloatingHearts from "@/components/animations/FloatingHearts";
 
 import MusicPlayer from "@/components/ui/MusicPlayer";
@@ -23,7 +24,7 @@ export default function Home() {
 
     <main className="relative bg-black">
 
-      {/* GLOBAL HEARTS */}
+      <AmbientGlow />
       <FloatingHearts />
 
       {/* MUSIC */}
