@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090f;
+  --foreground: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, #ff4d8d33, transparent 30%),
+    radial-gradient(circle at bottom right, #c77dff33, transparent 30%),
+    linear-gradient(
+      135deg,
+      #09090f,
+      #130b1f,
+      #1b102b
+    );
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(110vh) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-12vh) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  bottom: 0;
+  animation: float-heart linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-heart {
+    animation: none;
+    opacity: 0.25;
+  }
+}
