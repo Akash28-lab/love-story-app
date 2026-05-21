@@ -1,30 +1,37 @@
 "use client";
 
-const HEART_COUNT = 12;
+const HEART_COUNT = 20;
 
-const hearts = Array.from({ length: HEART_COUNT }, (_, index) => ({
-  id: index,
-  left: `${(index * 17 + 5) % 95}%`,
-  size: 14 + (index % 5) * 4,
-  duration: 12 + (index % 4) * 3,
-  delay: (index % 6) * 1.2,
-}));
+const hearts = Array.from({ length: HEART_COUNT }, (_, index) => {
+  const left = ((index * 37 + 11) % 88) + 6;
+  const drift = index % 2 === 0 ? -28 : 28;
+
+  return {
+    id: index,
+    left: `${left}%`,
+    size: 16 + (index % 6) * 3,
+    duration: 14 + (index % 5) * 2,
+    delay: index * 1.4,
+    drift,
+  };
+});
 
 export default function FloatingHearts() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[1] overflow-hidden"
+      className="floating-hearts-layer pointer-events-none fixed inset-0 z-30"
       aria-hidden
     >
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className="floating-heart absolute text-pink-400/40"
+          className="floating-heart"
           style={{
             left: heart.left,
             fontSize: `${heart.size}px`,
             animationDuration: `${heart.duration}s`,
             animationDelay: `${heart.delay}s`,
+            ["--heart-drift" as string]: `${heart.drift}px`,
           }}
         >
           ❤️

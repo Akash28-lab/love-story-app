@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
 
-    <main className="relative overflow-hidden bg-black">
+    <main className="relative bg-black">
 
       {/* GLOBAL HEARTS */}
       <FloatingHearts />
